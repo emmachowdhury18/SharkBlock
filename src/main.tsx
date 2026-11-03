@@ -5,7 +5,7 @@ import About from "./components/About.tsx";
 import CustomerTestimonials from "./components/CustomerTestimonials.tsx";
 import Shop from "./components/Shop.tsx";
 import { StrictMode } from "react";
-import Layout from "./layout.tsx";
+import Layout from "./Layout.tsx";
 
 const router = createBrowserRouter([
   {
