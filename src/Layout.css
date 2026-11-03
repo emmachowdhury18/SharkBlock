@@ -1,0 +1,143 @@
+:root {
+  --primary-text-color: #cdc3b9;
+}
+
+.background {
+  background-image: url("./assets/ocean-dark.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  background-attachment: scroll;
+}
+
+h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  margin: 0;
+  color: var(--primary-text-color);
+}
+
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--primary-text-color);
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr 1fr 3fr;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--primary-text-color);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: sticky;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--primary-text-color);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/* Hidden on desktop */
+.sidebar-button,
+.sidebar,
+.sidebar-overlay {
+  display: none;
+}
+
+/* ---------- Smaller Screen ---------- */
+@media (max-width: 1050px) {
+  /* hamburger | logo | cart */
+  .header-grid {
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .sidebar-button {
+    display: block;
+  }ß
+
+  .logo {
+    font-size: 2rem;
+    justify-self: center !important;
+  }
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease;
+    z-index: 20;
+  }
+  .sidebar-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sidebar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: min(16rem, 80vw);
+    padding: 1rem;
+    background-color: #0b1a22; /* pick something close to your ocean image */
+    border-right: 1px solid var(--primary-text-color);
+    transform: translateX(-100%);
+    visibility: hidden; /* keeps offscreen links out of the tab order */
+    transition:
+      transform 0.25s ease,
+      visibility 0.25s ease;
+    z-index: 30;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .sidebar-close {
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sidebar h2 {
+    font-size: 1.75rem;
+  }
+}
+/*
+  OCEAN-MEDIUM
+    - font/icon color: #cdc3b9
+
+  OCEAN DARK
+    - font/icon color: #8f9ea3
+*/
