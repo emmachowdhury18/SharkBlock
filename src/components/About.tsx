@@ -1,5 +1,11 @@
 export default function About() {
-  return <>
-  <section><h1>About page scaffolding</h1></section>
-  </>;
+  return (
+    <>
+      <div className="inset-white-background">
+        <section>
+          <h1>About page scaffolding</h1>
+        </section>
+      </div>
+    </>
+  );
 }

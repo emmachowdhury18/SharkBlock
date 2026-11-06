@@ -6,13 +6,14 @@ import CustomerTestimonials from "./components/CustomerTestimonials.tsx";
 import Shop from "./components/Shop.tsx";
 import { StrictMode } from "react";
 import Layout from "./Layout.tsx";
+import Home from "./components/Home.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
-      { index: true, element: <About /> }, 
+      { index: true, element: <Home /> }, 
       { path: "about", element: <About /> },
       { path: "customer-testimonials", element: <CustomerTestimonials /> },
       { path: "shop", element: <Shop /> },

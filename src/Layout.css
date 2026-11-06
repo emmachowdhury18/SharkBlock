@@ -1,15 +1,24 @@
 :root {
-  --primary-text-color: #cdc3b9;
+  --primary-text-color: #0b333a;
+  --primary-background-color: white;
 }
 
 .background {
-  background-image: url("./assets/ocean-dark.png");
+  background-image: url("./assets/ocean-waves.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
   background-attachment: scroll;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  min-height: 100svh;
 }
 
 h1 {
@@ -23,9 +32,19 @@ h1 {
 
 h2 {
   font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.025em;
   font-weight: 100;
   font-style: normal;
   font-size: 1.5rem;
+  margin: 0;
+  color: var(--primary-text-color);
+}
+
+h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.25rem;
   margin: 0;
   color: var(--primary-text-color);
 }
@@ -41,6 +60,35 @@ h2 {
   position: sticky;
 }
 
+.footer-grid {
+  min-height: 30svh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  padding: 1rem;
+  position: sticky;
+  bottom: 0;
+  margin-top: auto;
+  background: rgba(0, 0, 0, 0.5);
+
+  h2,
+  h3 {
+    color: white;
+    text-align: center;
+  }
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .icon {
   width: 1.5rem;
   height: 1.5rem;
@@ -51,6 +99,16 @@ h2 {
   }
 }
 
+.inset-white-background {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: #fff;
+  min-height: 100svh;
+  width: 100%;
+}
+
 /* Hidden on desktop */
 .sidebar-button,
 .sidebar,
@@ -58,7 +116,7 @@ h2 {
   display: none;
 }
 
-/* ---------- Smaller Screen ---------- */
+/* Smaller screen */
 @media (max-width: 1050px) {
   /* hamburger | logo | cart */
   .header-grid {
@@ -71,10 +129,9 @@ h2 {
 
   .sidebar-button {
     display: block;
-  }ß
+  }
 
   .logo {
-    font-size: 2rem;
     justify-self: center !important;
   }
 
@@ -100,11 +157,10 @@ h2 {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100dvh;
+    height: 100vh;
     width: min(16rem, 80vw);
     padding: 1rem;
-    background-color: #0b1a22; /* pick something close to your ocean image */
-    border-right: 1px solid var(--primary-text-color);
+    background-color: var(--primary-background-color);
     transform: translateX(-100%);
     visibility: hidden; /* keeps offscreen links out of the tab order */
     transition:
@@ -119,6 +175,7 @@ h2 {
 
   .sidebar-close {
     margin-bottom: 1.5rem;
+    color: var(--primary-text-color);
   }
 
   .sidebar ul {
@@ -129,10 +186,6 @@ h2 {
     flex-direction: column;
     gap: 1.5rem;
   }
-
-  .sidebar h2 {
-    font-size: 1.75rem;
-  }
 }
 /*
   OCEAN-MEDIUM
@@ -140,4 +193,5 @@ h2 {
 
   OCEAN DARK
     - font/icon color: #8f9ea3
+    - background color: #172a31
 */
