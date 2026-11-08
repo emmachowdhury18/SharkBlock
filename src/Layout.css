@@ -3,11 +3,20 @@
   --primary-background-color: white;
 }
 
-.background {
+html {
   background-image: url("./assets/ocean-waves.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+.background {
   min-height: 100dvh;
   width: 100%;
   background-attachment: scroll;
