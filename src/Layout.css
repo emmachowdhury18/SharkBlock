@@ -4,25 +4,18 @@
   --primary-match-color: #78bbd4;
 }
 
-html {
-  background-color: var(--primary-match-color);
-}
-
-body {
-  margin: 0;
-}
-
 body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 100vh; /* fallback */
-  height: 100lvh; /* "large viewport": includes the area when toolbars are collapsed */
+  height: 100lvh;
   z-index: -1;
-  background: var(--primary-match-color) url("./assets/ocean-waves.png")
-    center / cover no-repeat;
+  background-image: url("./assets/ocean-waves.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .background {
