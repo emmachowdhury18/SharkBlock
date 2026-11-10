@@ -2,36 +2,36 @@ import { links } from "@/constants/links";
 import "../Layout.css";
 import { NavLink } from "react-router";
 
-export default function Header() {
+export default function Footer() {
   return (
     <>
       <footer>
-        <div className="flex footer-grid">
+        <div className="footer-grid">
           <div>
-            <h2>Quick Links</h2>
+            <p className="nav-link footer-text">Quick Links</p>
             <ul>
               {links.map(({ to, label }) => (
                 <li key={to}>
-                  <h2 style={{ fontSize: "1rem" }}>
+                  <p className="nav-link footer-text body">
                     <NavLink to={to}>{label}</NavLink>
-                  </h2>
+                  </p>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h2>Contact Us</h2>
+            <p className="nav-link footer-text">Contact Us</p>
             <ul>
               <li>
-                <h2 style={{ fontSize: "1rem" }}>(000) 000-0000</h2>
-                <h2 style={{ fontSize: "1rem" }}>
+                <p className="nav-link footer-text body">(000) 000-0000</p>
+                <p className="nav-link footer-text body">
                   <a
                     href="mailto:testemail@gmail.com"
                     style={{ textDecoration: "underline" }}
                   >
                     testemail@gmail.com
                   </a>
-                </h2>
+                </p>
               </li>
             </ul>
           </div>

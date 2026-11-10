@@ -4,7 +4,6 @@ import { Menu, ShoppingCart, X } from "lucide-react";
 import { useState } from "react";
 import { NavLink } from "react-router";
 
-
 export default function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const closeSidebar = () => setSidebarOpen(false);
@@ -22,15 +21,14 @@ export default function Header() {
         >
           <Menu className="icon" />
         </button>
-
         {/* Desktop header */}
-        <h1 className="logo justify-self-start">
+        <p className="logo justify-self-start">
           <NavLink to="/">SharkBlock</NavLink>
-        </h1>
+        </p>
         {links.map(({ to, label }) => (
-          <h2 key={to} className="nav-link justify-self-center">
+          <p key={to} className="justify-self-center header-nav-link">
             <NavLink to={to}>{label}</NavLink>
-          </h2>
+          </p>
         ))}
         <button className="justify-self-end" aria-label="Open cart">
           <ShoppingCart className="icon" />
@@ -53,11 +51,11 @@ export default function Header() {
         <ul>
           {links.map(({ to, label }) => (
             <li key={to}>
-              <h2>
+              <p className="nav-link">
                 <NavLink to={to} onClick={closeSidebar}>
                   {label}
                 </NavLink>
-              </h2>
+              </p>
             </li>
           ))}
         </ul>

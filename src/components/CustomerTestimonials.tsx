@@ -3,7 +3,7 @@ export default function CustomerTestimonials() {
     <>
       <div className="inset-white-background">
         <section>
-          <h1>Customer Testimonials page scaffolding</h1>
+          <p className="body-text">Customer Testimonials page scaffolding</p>
         </section>
       </div>
     </>

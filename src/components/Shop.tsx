@@ -4,14 +4,14 @@ export default function Shop() {
   return (
     <>
       <div className="inset-white-background">
-        <div className="shop-grid h-100">
+        <div className="shop-grid">
           <img
             src={cuteShark}
             alt="Cute Shark"
             width="300"
             style={{ borderRadius: "10px" }}
           />
-          <h3>
+          <p className="body-text">
             Here is a bunch of information on repelling this cute shark!
             <br />
             <br />
@@ -25,7 +25,7 @@ export default function Shop() {
             eliminate shark interactions. <br />
             Sharks are wild, conscious, independent animals that make variable
             decisions based off feeding and self-defense urges.
-          </h3>
+          </p>
         </div>
       </div>
     </>
